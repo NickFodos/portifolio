@@ -212,9 +212,11 @@ footer img {
     }
 }
 
-@media screen and (min-width:430px) {
+@media screen and (min-width:520px) {
     #img {
         display: grid;
+        justify-content: center;
+        column-gap: 10%;
         grid-template-areas:
             'img-1 img-2 img-3 '
             'img-6 img-5 img-4 ';
