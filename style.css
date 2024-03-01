@@ -11,6 +11,7 @@ body {
     background-color: #222222;
     color: whitesmoke;
 
+
 }
 
 header {
@@ -36,7 +37,6 @@ nav span {
 }
 
 main {
-
     display: flex;
     justify-content: center;
     margin-top: 50px;
@@ -142,10 +142,9 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     margin: 10px;
     border-radius: 15px;
-
 }
 
 footer div {
@@ -156,8 +155,8 @@ footer div {
 }
 
 footer img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
 
 }
@@ -178,12 +177,14 @@ footer img {
     main {
         flex-direction: column;
         align-items: center;
+        transition: 5s ease-in-out;
     }
 
     #sobre-mim,
     #conhecimentos,
     #qualidades {
         width: 90%;
+
 
     }
 }
@@ -201,6 +202,8 @@ footer img {
 
     footer div {
         margin-top: 10px;
+        justify-content: center;
+        width: 100%;
     }
 }
 
