@@ -1,0 +1,230 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+
+    margin: 20px;
+    background-color: #222222;
+    color: whitesmoke;
+
+}
+
+header {
+    background-color: #1e7fffc4;
+    padding: 20px;
+    width: 100%;
+    border-radius: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav span {
+    background-color: rgb(0, 38, 119);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 15px;
+
+}
+
+main {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 10px;
+}
+
+#sobre-mim,
+#conhecimentos,
+#qualidades {
+    color: #222222;
+    background-color: #89bcffc4;
+    border-radius: 10px;
+    border: 1px solid #006eff;
+    padding: 10px;
+
+    text-align: start;
+}
+
+#sobre-mim {
+    width: 60vh;
+}
+
+#sobre-mim p {
+    line-height: 25px;
+    font-size: 19px;
+}
+
+#conhecimentos {
+    text-align: center;
+    width: 90vh;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    font-size: 18px;
+}
+
+img {
+    cursor: pointer;
+    width: 110px;
+    height: 110px;
+
+}
+
+
+
+#img-1 {
+    grid-area: img-1;
+}
+
+#img-2 {
+    grid-area: img-2;
+}
+
+#img-3 {
+    grid-area: img-3;
+}
+
+#img-4 {
+    grid-area: img-4;
+}
+
+#img-5 {
+    grid-area: img-5;
+    animation: rotate 4s linear infinite;
+}
+
+#img-6 {
+    grid-area: img-6;
+}
+
+
+
+@keyframes vire {
+    from {
+        transform: rotateX(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+        /* Rotação inicial: 0 graus */
+    }
+
+    to {
+        transform: rotate(360deg);
+        /* Rotação final: 360 graus (uma volta completa) */
+    }
+}
+
+
+footer {
+
+    background-color: #1e7fffc4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+
+}
+
+footer div {
+    background-color: whitesmoke;
+    padding: 5px;
+    display: flex;
+    border-radius: 15px;
+}
+
+footer img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+
+}
+
+
+@media screen and (min-width:1000px) {
+    #img-4:hover,
+    #img-6:hover,
+    #img-1:hover,
+    #img-2:hover,
+    #img-3:hover {
+        animation: vire 4s linear;
+    }
+}
+@media screen and (max-width:920px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sobre-mim,
+    #conhecimentos,
+    #qualidades {
+        width: 90%;
+
+    }
+}
+
+@media screen and (max-width:530px) {
+    footer {
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    footer h2 {
+        font-size: 100%;
+        text-align: center;
+    }
+
+    footer div {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width:430px) {
+
+    nav {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width:430px) {
+    #img {
+        display: grid;
+        grid-template-areas:
+            'img-1 img-2 img-3 '
+            'img-6 img-5 img-4 ';
+    }
+}
+
+@media screen and (max-width:250px) {
+
+    header,
+    main,
+    footer {
+        display: none;
+        pointer-events: none;
+    }
+}
