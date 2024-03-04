@@ -7,7 +7,10 @@
 
 body {
 
-    margin: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
     background-color: #222222;
     color: whitesmoke;
 
@@ -38,10 +41,15 @@ nav span {
 
 main {
     display: flex;
-    justify-content: center;
     margin-top: 50px;
     margin-bottom: 50px;
     gap: 10px;
+}
+
+header,
+footer {
+    width: 100%;
+    max-width: 100%;
 }
 
 #sobre-mim,
@@ -57,7 +65,7 @@ main {
 
 #sobre-mim {
     width: 60vh;
-    text-align: center;
+    text-align: justify;
 }
 
 #sobre-mim p {
@@ -67,6 +75,7 @@ main {
 
 #conhecimentos {
     text-align: center;
+    padding: 20px;
     width: 90vh;
 }
 
@@ -81,6 +90,8 @@ li {
 img {
     cursor: pointer;
     width: 110px;
+    max-width: 100%;
+    max-height: 100%;
     height: 110px;
 
 }
@@ -121,6 +132,7 @@ img {
     to {
         transform: rotateY(360deg);
     }
+
 }
 
 @keyframes rotate {
@@ -161,33 +173,39 @@ footer img {
 
 }
 
+@media screen and (max-width:1400px) {
 
-@media screen and (min-width:1000px) {
-
-    #img-4:hover,
-    #img-6:hover,
-    #img-1:hover,
-    #img-2:hover,
-    #img-3:hover {
-        animation: vire 4s linear infinite;
+    #sobre-mim,
+    #conhecimentos,
+    #qualidades {
+        width: 95%
     }
+
 }
+
+
 
 @media screen and (max-width:1100px) {
     main {
         flex-direction: column;
         align-items: center;
-        transition: 5s ease-in-out;
     }
 
     #sobre-mim,
     #conhecimentos,
     #qualidades {
-        width: 90%;
+        width: 100%;
+    }
 
+}
 
+@media screen and (min-width:1000px) {
+
+    main img:hover {
+        animation: vire 4s linear infinite;
     }
 }
+
 
 @media screen and (max-width:530px) {
     footer {
@@ -196,7 +214,7 @@ footer img {
     }
 
     footer h2 {
-        font-size: 100%;
+        font-size: 20px;
         text-align: center;
     }
 
@@ -206,6 +224,7 @@ footer img {
         width: 100%;
     }
 }
+
 
 @media screen and (max-width:430px) {
 
@@ -226,17 +245,54 @@ footer img {
         justify-content: center;
         column-gap: 10%;
         grid-template-areas:
-            'img-1 img-2 img-3 '
-            'img-6 img-5 img-4 ';
+            'img-1 img-2 img-3'
+            'img-4 img-5 img-6'
+        ;
     }
 }
 
-@media screen and (max-width:250px) {
+@media screen and (max-width:210px) {
+
 
     header,
     main,
     footer {
-        display: none;
-        pointer-events: none;
+
+        max-width: 100%;
+    }
+
+
+
+    #sobre-mim,
+    #conhecimentos,
+    #qualidades {
+        padding: 5px;
+        max-width: 100%;
+    }
+
+
+}
+
+@media screen and (max-width:200px) {
+    body,
+    header,
+    main,
+    footer {
+        display: none; /* Oculta os elementos */
+        color: transparent; /* Torna o texto transparente */
+        text-decoration: none; /* Remove decorações de texto */
+        opacity: 0; /* Define a opacidade para 0 (completamente transparente) */
+        pointer-events: none; /* Desativa eventos do mouse */
+        cursor: none; /* Remove o cursor do mouse */
+        background: none; /* Remove o plano de fundo */
+        border: none; /* Remove as bordas */
+        margin: 0; /* Define margem para 0 */
+        padding: 0; /* Define preenchimento para 0 */
+        width: 0; /* Define largura para 0 */
+        height: 0; /* Define altura para 0 */
+        overflow: hidden; /* Esconde qualquer conteúdo que possa estar fora dos limites */
+        position: fixed; /* Define a posição como fixa */
+        top: -9999px; /* Move o elemento para cima, fora da tela */
+        left: -9999px; /* Move o elemento para a esquerda, fora da tela */
     }
 }
